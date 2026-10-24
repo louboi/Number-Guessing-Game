@@ -8,3 +8,10 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Visual Studio Code rubbish
+.vscode
+
+# Documents
+*.pdf
+*.docx
