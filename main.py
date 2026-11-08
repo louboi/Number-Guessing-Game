@@ -1,3 +1,9 @@
+import random
+
+def welcome():
+    art = open("ascii/welcome.txt", 'r')
+    print(art.read())
+    
 def get_input():
     '''Gets the users guess and validates it is an integer. Returns the input when valid'''
     
@@ -31,14 +37,24 @@ def validate_range():
 
 def main():
     # Print a welcome screen
-    
-    # Generate a number
+    welcome()
 
-    # Get the user input and validate it
-    guess = validate_range()
+    # Generate a number
+    target = random.randint(0,100)
 
     # Check, print result, continue looping
+    finished = False
     
+    while finished == False:
+        guess = validate_range()
+        if guess == target:
+            print("Correct!")
+            finished = True
+        elif guess > target:
+            print("Too High")
+        elif guess < target:
+            print("Too Low")
+
     # Store result
 
     # Play again or new player
