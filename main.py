@@ -30,7 +30,22 @@ def validate_range():
     return temp
 
 def main():
-    validate_range()
+    # Print a welcome screen
+    
+    # Generate a number
 
+    # Get the user input and validate it
+    guess = validate_range()
+
+    # Check, print result, continue looping
+    
+    # Store result
+
+    # Play again or new player
+
+    # Sort results
+
+    # Print results
+ 
 if __name__ == "__main__":
     main()
