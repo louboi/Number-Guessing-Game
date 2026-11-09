@@ -1,6 +1,7 @@
 import random
 
 def ascii_print(message):
+    '''Prints the pretty ascii art for the required message'''
     file_path = "ascii/" + message + ".txt"
     art = open(file_path, 'r')
     print(art.read())
@@ -40,15 +41,20 @@ def validate_range():
     # Return the Value
     return temp
 
+def store_result(name, score):
+    pass
+
 def main():
     # Print a welcome screen
     ascii_print("welcome")
 
     # Generate a number
     target = random.randint(0,100)
-
+    print(target)
+    
     # Check, print result, continue looping
     finished = False
+    score = 0
     
     while finished == False:
         guess = validate_range()
@@ -59,11 +65,18 @@ def main():
             print("Too High")
         elif guess < target:
             print("Too Low")
+        score += 1
 
-    # Get name a store result (JSON?)
+    print("Score = " + str(score))
+
+    # Get name and store result (JSON?)
+    name = str(input("What is your name? "))
+    store_result(name, score)
 
     # Play again or new player
+    choice = input("New player (N), or Play Again (A)? ").upper()
 
+    
     # Sort results
 
     # Print results
