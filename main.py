@@ -1,7 +1,8 @@
 import random
 
-def welcome():
-    art = open("ascii/welcome.txt", 'r')
+def ascii_print(message):
+    file_path = "ascii/" + message + ".txt"
+    art = open(file_path, 'r')
     print(art.read())
     
 def get_input():
@@ -22,10 +23,14 @@ def get_input():
     return temp
 
 def validate_range():
-    '''Check the input is in the valid range of  0 to 100 inclusive. Takes no variables, calls get_input itself'''
+    '''Check the input is in the valid range of 0 to 100 inclusive. Takes no variables, calls get_input itself'''
     
     # Initialise a temporary variable with the valid integer input
     temp = get_input() 
+
+    # Check to allow for exiting early
+    if temp == -1:
+        exit()
     
     # Keep looping until it is in the correct range
     while temp < 0 or temp > 100: # Check if it's NOT in the range
@@ -37,7 +42,7 @@ def validate_range():
 
 def main():
     # Print a welcome screen
-    welcome()
+    ascii_print("welcome")
 
     # Generate a number
     target = random.randint(0,100)
@@ -55,7 +60,7 @@ def main():
         elif guess < target:
             print("Too Low")
 
-    # Store result
+    # Get name a store result (JSON?)
 
     # Play again or new player
 
